@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+*~
+*.swp
+__pycache__/
+*.pyc
+.coverage
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/

@@ -1,0 +1,100 @@
+name: Verify generated monomers
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-monomers:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out generated formats
+        uses: actions/checkout@v4
+
+      - name: Inspect generated artifact set
+        id: artifacts
+        shell: bash
+        run: |
+          artifacts=(
+            data/monomers.json
+            data/monomers.csv
+            data/monomers.tsv
+            data/monomers.sdf
+            data/monomers.schema.json
+            data/SHA256SUMS
+          )
+          present=0
+          for artifact in "${artifacts[@]}"; do
+            if [[ -f "$artifact" ]]; then
+              present=$((present + 1))
+            fi
+          done
+
+          if [[ "$present" -eq "${#artifacts[@]}" ]]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          elif [[ "$present" -ne 0 ]]; then
+            echo "Generated artifact set is incomplete." >&2
+            exit 1
+          elif [[ "$GITHUB_REF" == refs/tags/* ]]; then
+            echo "A release tag must contain generated artifacts." >&2
+            exit 1
+          else
+            echo "No generated artifacts are present in the bootstrap commit."
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+        with:
+          version: "0.11.32"
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Test the release verifier
+        run: uv run --python 3.12 scripts/run_tests.py
+
+      - name: Verify generated output formats
+        if: steps.artifacts.outputs.present == 'true'
+        run: uv run --python 3.12 scripts/verify_release.py data
+
+      - name: Validate release tag
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          if [[ ! "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+([+-][0-9A-Za-z.-]+)?$ ]]; then
+            echo "Release tag must match vMAJOR.MINOR.PATCH with an optional SemVer suffix." >&2
+            exit 1
+          fi
+
+  create-release:
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: verify-monomers
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out generated formats
+        uses: actions/checkout@v4
+
+      - name: Create datasets release for Zenodo
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            --repo "${GITHUB_REPOSITORY}" \
+            --verify-tag \
+            --title "Monomer database ${GITHUB_REF_NAME}" \
+            --notes "Verified output formats generated from the matching [monomer-database-source release](https://github.com/ProteinQure/monomer-database-source/releases/tag/${GITHUB_REF_NAME})." \
+            data/monomers.json data/monomers.csv data/monomers.tsv data/monomers.sdf data/monomers.schema.json data/SHA256SUMS

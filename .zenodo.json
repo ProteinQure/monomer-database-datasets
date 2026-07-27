@@ -1,0 +1,23 @@
+{
+  "title": "Monomer database datasets",
+  "description": "Versioned machine-readable exports generated from the authoritative monomer-database-source repository.",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "cc-by-sa-4.0",
+  "language": "eng",
+  "keywords": [
+    "monomers",
+    "amino acids"
+  ],
+  "creators": [
+    {
+      "name": "ProteinQure"
+    }
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/ProteinQure/monomer-database-source",
+      "relation": "isDerivedFrom"
+    }
+  ]
+}
