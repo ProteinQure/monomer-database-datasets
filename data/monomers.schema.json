@@ -36,8 +36,11 @@
         "minLength": 1
       },
       "IUPAC_CONDENSED": {
-        "description": "Condensed IUPAC name of the monomer.",
-        "type": "string",
+        "description": "Condensed IUPAC name of the monomer, or null when no condensed name is available.",
+        "type": [
+          "string",
+          "null"
+        ],
         "minLength": 1
       },
       "IUPAC": {
