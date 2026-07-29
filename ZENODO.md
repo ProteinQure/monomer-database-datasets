@@ -12,7 +12,8 @@ The repository contains two active metadata files:
   as the organizational creator, applies CC BY-SA 4.0, supplies the title,
   description, English language, keywords, and related source repository.
 - `CITATION.cff` enables GitHub's citation interface and identifies ProteinQure
-  as the organizational author.
+  as the organizational author. It identifies the latest archived release,
+  `v1.0.0`, with its version-specific DOI and publication date.
 
 Zenodo gives `.zenodo.json` precedence when both files exist. Do not hard-code
 a release version in `.zenodo.json`; the GitHub release tag supplies it.
@@ -30,10 +31,13 @@ Contributors and roles, funding/grant identifiers, related publication DOIs,
 and a Zenodo community are currently omitted. Add them later if applicable;
 do not infer them from Git commit history.
 
-## After the first archive
+## DOI records
 
-Zenodo assigns a DOI to the specific release and a concept DOI representing all
-versions. Add the DOI badge supplied by Zenodo near the top of `README.md`,
-linked to the concept DOI landing page. Put the version-specific DOI in the
-preferred citation for that release. Update links without rewriting or
-retargeting an existing release tag.
+Zenodo assigned `10.5281/zenodo.21684534` to the immutable `v1.0.0` release and
+`10.5281/zenodo.21684533` as the concept DOI representing all versions. The
+badge in `README.md` links to the concept DOI, while the preferred citation and
+`CITATION.cff` use the version-specific DOI.
+
+For a future release, update the preferred citation and release fields in
+`CITATION.cff` to the new version-specific Zenodo record. Do not rewrite or
+retarget an existing release tag.

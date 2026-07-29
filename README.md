@@ -1,14 +1,12 @@
 # Monomer database datasets
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21684533.svg)](https://doi.org/10.5281/zenodo.21684533)
+
 This repository contains versioned output formats for the monomer database.
 The files are generated from the authoritative
 [`monomer-database-source`](https://github.com/ProteinQure/monomer-database-source)
-repository and are intended for download and Zenodo archival.
-
-The bootstrap commit intentionally contains no generated dataset. Publishing
-the source repository's initial `v0.0.1` release will create this repository's
-second commit and first tagged release, containing the 20 canonical amino
-acids. ProteinQure is identified as the organizational creator; see
+repository and are available for download and archival through Zenodo.
+ProteinQure is identified as the organizational creator; see
 [ZENODO.md](ZENODO.md).
 
 ## Download and verify
@@ -57,6 +55,11 @@ the checksums, and then creates the datasets GitHub release.
 `main` may advance after a release. A tag, GitHub release, or version-specific
 Zenodo DOI identifies an immutable snapshot.
 
+The latest archived dataset is available from the
+[Zenodo record for all versions](https://doi.org/10.5281/zenodo.21684533).
+Version `v1.0.0` is permanently available at
+[doi:10.5281/zenodo.21684534](https://doi.org/10.5281/zenodo.21684534).
+
 ## Corrections and contributions
 
 Do not directly edit generated files or propose data changes in this
@@ -68,13 +71,17 @@ Include the affected record identifiers and version or DOI. See
 
 ## Citation and licenses
 
-ProteinQure is the organizational creator in `CITATION.cff` and
-`.zenodo.json`. Once the first Zenodo archive exists, this section should
-contain:
+When using version `v1.0.0`, cite the archived dataset:
 
-1. the preferred dataset citation using the version-specific DOI;
-2. a Zenodo DOI badge linked to the concept DOI landing page; and
-3. links to both the latest Zenodo record and the source repository.
+> ProteinQure. (2026). *Monomer database datasets* (Version v1.0.0)
+> [Dataset]. Zenodo.
+> https://doi.org/10.5281/zenodo.21684534
+
+For another version, use the citation and version-specific DOI on its Zenodo
+record. GitHub-readable citation metadata is provided in
+[`CITATION.cff`](CITATION.cff), and the authoritative data source is the
+[`monomer-database-source`](https://github.com/ProteinQure/monomer-database-source)
+repository.
 
 The dataset, schema, and documentation are licensed under
 [Creative Commons Attribution-ShareAlike 4.0 International](LICENSE).

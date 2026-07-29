@@ -4,6 +4,9 @@ title: "Monomer database datasets"
 type: dataset
 authors:
   - name: "ProteinQure"
+doi: "10.5281/zenodo.21684534"
+version: "v1.0.0"
+date-released: 2026-07-29
 repository-code: "https://github.com/ProteinQure/monomer-database-source"
 url: "https://github.com/ProteinQure/monomer-database-datasets"
 license: "CC-BY-SA-4.0"
