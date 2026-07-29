@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/ProteinQure/monomer-database-source/main/schema/monomers.schema.json",
+  "title": "Monomers",
+  "description": "An array of monomer records used by the ProteinQure monomer database.",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "PQ_SYMBOL",
+      "FULL_NAME",
+      "IUPAC_CONDENSED",
+      "IUPAC",
+      "TYPE",
+      "CLASS",
+      "ANALOG",
+      "MOL_WT",
+      "LOGP",
+      "TPSA",
+      "POPULARITY",
+      "PROTECTED",
+      "SMILES",
+      "INCHIKEY"
+    ],
+    "properties": {
+      "PQ_SYMBOL": {
+        "description": "Unique, user-visible ProteinQure identifier for the monomer.",
+        "type": "string",
+        "minLength": 1
+      },
+      "FULL_NAME": {
+        "description": "Full name of the monomer.",
+        "type": "string",
+        "minLength": 1
+      },
+      "IUPAC_CONDENSED": {
+        "description": "Condensed IUPAC name of the monomer.",
+        "type": "string",
+        "minLength": 1
+      },
+      "IUPAC": {
+        "description": "Full systematic IUPAC name of the monomer.",
+        "type": "string",
+        "minLength": 1
+      },
+      "TYPE": {
+        "description": "High-level monomer role: Backbone, N-term cap, C-term cap, or Modification.",
+        "type": "string",
+        "minLength": 1
+      },
+      "CLASS": {
+        "description": "Backbone class, such as alpha, beta, gamma, delta, or epsilon; classes that only restate a terminal-cap type are displayed as blank in the UI.",
+        "type": "string",
+        "minLength": 1
+      },
+      "ANALOG": {
+        "description": "Three-letter code of the monomer's canonical natural amino-acid analogue; X indicates no natural analogue.",
+        "type": "string",
+        "minLength": 1
+      },
+      "MOL_WT": {
+        "description": "Average molecular weight of the free monomer, in daltons (Da).",
+        "type": "number",
+        "exclusiveMinimum": 0
+      },
+      "LOGP": {
+        "description": "Calculated octanol/water partition coefficient (cLogP); higher values indicate greater lipophilicity. Unitless.",
+        "type": "number"
+      },
+      "TPSA": {
+        "description": "Topological polar surface area (tPSA), in square ångströms (Å²); a proxy for hydrogen-bonding capacity and membrane permeability.",
+        "type": "number",
+        "minimum": 0
+      },
+      "POPULARITY": {
+        "description": "Estimate of how widely the monomer is used, from 0 to 100, combining commercial availability with occurrences in public structure and bioactivity databases; treat it as a lower bound because unchecked sources count as zero.",
+        "type": "number",
+        "minimum": 0,
+        "maximum": 100
+      },
+      "PROTECTED": {
+        "description": "Whether at least one vendor-listed protected variant is available, represented as the uppercase string TRUE or FALSE.",
+        "type": "string",
+        "enum": [
+          "TRUE",
+          "FALSE"
+        ]
+      },
+      "SMILES": {
+        "description": "SMILES structure representation of the unprotected monomer.",
+        "type": "string",
+        "minLength": 1
+      },
+      "INCHIKEY": {
+        "description": "Standard InChIKey used as an exact-match structure identifier.",
+        "type": "string",
+        "pattern": "^[A-Z]{14}-[A-Z]{10}-[A-Z]$"
+      }
+    }
+  }
+}
