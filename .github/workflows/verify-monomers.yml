@@ -94,7 +94,11 @@ jobs:
         run: |
           gh release create "${GITHUB_REF_NAME}" \
             --repo "${GITHUB_REPOSITORY}" \
+            --draft \
             --verify-tag \
             --title "Monomer database ${GITHUB_REF_NAME}" \
             --notes "Verified output formats generated from the matching [monomer-database-source release](https://github.com/ProteinQure/monomer-database-source/releases/tag/${GITHUB_REF_NAME})." \
             data/monomers.json data/monomers.csv data/monomers.tsv data/monomers.sdf data/monomers.schema.json data/SHA256SUMS
+          gh release edit "${GITHUB_REF_NAME}" \
+            --repo "${GITHUB_REPOSITORY}" \
+            --draft=false
