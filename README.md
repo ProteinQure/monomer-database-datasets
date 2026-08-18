@@ -1,6 +1,6 @@
 # Monomer database datasets
 [![Release](https://img.shields.io/github/v/release/ProteinQure/monomer-database-datasets?label=release&color=f5995b)](https://github.com/ProteinQure/monomer-database-datasets/releases/latest)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21684533.svg)](https://doi.org/10.5281/zenodo.21684533)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21684533-1682D4)](https://doi.org/10.5281/zenodo.21684533)
 ![Monomers](https://img.shields.io/badge/monomers-2488-2e6e8e)
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
 
