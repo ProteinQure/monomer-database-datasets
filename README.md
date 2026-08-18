@@ -1,13 +1,12 @@
 # Monomer database datasets
-
+[![Release](https://img.shields.io/github/v/release/ProteinQure/monomer-database-datasets?label=release&color=f5995b)](https://github.com/ProteinQure/monomer-database-datasets/releases/latest)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21684533.svg)](https://doi.org/10.5281/zenodo.21684533)
+![Monomers](https://img.shields.io/badge/monomers-2488-2e6e8e)
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
 
-This repository contains versioned output formats for the monomer database.
-The files are generated from the authoritative
-[`monomer-database-source`](https://github.com/ProteinQure/monomer-database-source)
-repository and are available for download and archival through Zenodo.
-ProteinQure is identified as the organizational creator; see
-[ZENODO.md](ZENODO.md).
+The monomer database is a curated, openly-licensed database of 2,488 peptide monomers; canonical and non-canonical amino-acid backbones (α/β/γ/δ/ε), N-/C-terminal caps, and side-chain modifications with physicochemical properties (MW, cLogP, tPSA), usage/availability signals, and structure identifiers (SMILES, InChIKey), for peptide and macrocycle design.
+
+This repository contains versioned output formats for the monomer database. The files are generated from the authoritative [`monomer-database-source`](https://github.com/ProteinQure/monomer-database-source) repository and are available for download and archival through [Zenodo]((https://doi.org/10.5281/zenodo.21684533)). [ProteinQure](https://proteinqure.com) is identified as the organizational creator; see [ZENODO.md](ZENODO.md).
 
 ## Download and verify
 
