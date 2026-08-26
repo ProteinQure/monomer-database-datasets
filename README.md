@@ -2,11 +2,16 @@
 [![Release](https://img.shields.io/github/v/release/ProteinQure/monomer-database-datasets?label=release&color=f5995b)](https://github.com/ProteinQure/monomer-database-datasets/releases/latest)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21684533-1682D4)](https://doi.org/10.5281/zenodo.21684533)
 ![Monomers](https://img.shields.io/badge/monomers-2488-2e6e8e)
-[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
+[![Data: CC BY-SA 4.0](https://img.shields.io/badge/data-CC%20BY--SA%204.0-lightgrey.svg)](LICENSE)
+[![Code: AGPL v3](https://img.shields.io/badge/code-AGPL%20v3-lightgrey.svg)](LICENSE-CODE)
 
-The monomer database is a curated, openly-licensed database of 2,488 peptide monomers; canonical and non-canonical amino-acid backbones (α/β/γ/δ/ε), N-/C-terminal caps, and side-chain modifications with physicochemical properties (MW, cLogP, tPSA), usage/availability signals, and structure identifiers (SMILES, InChIKey), for peptide and macrocycle design.
+The Monomer Database is a curated, openly licensed resource for peptide and macrocycle design. 2,488 chemically standardized canonical and non-canonical monomers spanning α/β/γ/δ/ε backbones plus N- and C-terminal caps, with SMILES, InChIKeys, systematic IUPAC names, natural-analogue mapping, computed physicochemical properties (MW, cLogP, tPSA), and commercial-availability signals. Each entry carries a ProteinQure-derived HELM-style monomer shorthand.
 
-This repository contains versioned output formats for the monomer database. The files are generated from the authoritative [`monomer-database-source`](https://github.com/ProteinQure/monomer-database-source) repository and are available for download and archival through [Zenodo]((https://doi.org/10.5281/zenodo.21684533)). [ProteinQure](https://proteinqure.com) is identified as the organizational creator; see [ZENODO.md](ZENODO.md).
+**This repository contains versioned output formats for the monomer database. The files are generated from the authoritative [`monomer-database-source`](https://github.com/ProteinQure/monomer-database-source) repository and are available for download and archival through [Zenodo]((https://doi.org/10.5281/zenodo.21684533)).** [ProteinQure](https://proteinqure.com) is identified as the organizational creator; see [ZENODO.md](ZENODO.md).
+
+## Interactive Monomer Explorer UI
+
+The Monomer Database can be interactively browsed, explored and searched via the free [Monomer Explorer](https://monomers.proteinqure.com/) hosted by [ProteinQure](https://proteinqure.com). Search the database by name, SMILES, or even a partially remembered name, and retrieve the nearest neighbours of any monomer ranked by Tanimoto similarity. The Chemical Exploration view maps the space around a selected monomer across four regions; close analogues, potential activity cliffs, putative scaffold hops, and the far edge of the space.
 
 ## Download and verify
 
