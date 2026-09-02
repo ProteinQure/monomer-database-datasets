@@ -5,7 +5,7 @@
 [![Data: CC BY-SA 4.0](https://img.shields.io/badge/data-CC%20BY--SA%204.0-lightgrey.svg)](LICENSE)
 [![Code: AGPL v3](https://img.shields.io/badge/code-AGPL%20v3-lightgrey.svg)](LICENSE-CODE)
 
-The Monomer Database is a curated, openly licensed resource for peptide and macrocycle design. 2,488 chemically standardized canonical and non-canonical monomers spanning α/β/γ/δ/ε backbones plus N- and C-terminal caps, with SMILES, InChIKeys, systematic IUPAC names, natural-analogue mapping, computed physicochemical properties (MW, cLogP, tPSA), and commercial-availability signals. Each entry carries a ProteinQure-derived HELM-style monomer shorthand.
+The Monomer Database is a curated, openly licensed resource for peptide and macrocycle design. 2,488 chemically standardized canonical and non-canonical peptide monomers spanning α/β/γ/δ/ε backbones plus N- and C-terminal caps, with SMILES, InChIKeys, systematic IUPAC names, natural-analogue mapping, computed physicochemical properties (MW, cLogP, tPSA), and commercial-availability signals. Each entry carries a ProteinQure-derived HELM-style peptide monomer shorthand.
 
 **This repository contains versioned output formats for the monomer database. The files are generated from the authoritative [`monomer-database-source`](https://github.com/ProteinQure/monomer-database-source) repository and are available for download and archival through [Zenodo]((https://doi.org/10.5281/zenodo.21684533)).** [ProteinQure](https://proteinqure.com) is identified as the organizational creator; see [ZENODO.md](ZENODO.md).
 
