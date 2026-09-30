@@ -86,7 +86,7 @@ def write_expected_sdf(records: list[dict[str, Any]], path: Path) -> None:
         molecule = Chem.MolFromSmiles(record.get("SMILES", ""))
         if molecule is None:
             raise ValueError(f"JSON record {index} has an invalid SMILES value")
-        rdDepictor.Compute2DCoords(molecule, canonOrient=True)
+        rdDepictor.Compute2DCoords(molecule, canonOrient=True, useRingTemplates=True)
         title = str(record.get("PQ_SYMBOL") or "")
         molecule.SetProp("_Name", title)
         molecule.SetProp("rName", title)
